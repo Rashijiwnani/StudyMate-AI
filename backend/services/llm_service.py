@@ -22,5 +22,5 @@ def generate_answer(question, context):
     """
 
     response = model.generate_content(prompt)
-
+    print(response)
     return response.text

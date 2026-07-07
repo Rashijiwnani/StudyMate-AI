@@ -1,36 +1,50 @@
 import chromadb
 from services.embedding_service import model
+import os 
+
 client = chromadb.PersistentClient(path="chroma_db")
 
 collection = client.get_or_create_collection(
     name="pdf_chunks"
 )
 
-def store_chunks(ids, chunks, embeddings):
+
+print("Current dir:", os.getcwd())
+print("Absolute path:", os.path.abspath("chroma_db"))
+def store_chunks(ids, chunks, embeddings, user_id):
+
     collection.add(
-        ids=ids,
-        documents=chunks,
-        embeddings=embeddings.tolist()
-    )
+    documents=chunks,
+    embeddings=embeddings,
+    ids=ids,
+    metadatas=[
+        {
+            "user_id": user_id
+        }
+        for _ in chunks
+    ]
+)
+    # print(collection.get())
+    # print("Stored successfully in ChromaDB")
+    # print("Total vectors:", collection.count())
 
-    print("Stored successfully in ChromaDB")
-    print("Total vectors:", collection.count())
-
-
-def search_chunks(question):
-
+def search_chunks(question, user_id):
+    
     # Convert question to embedding
     question_embedding = model.encode(question)
 
     # Search ChromaDB
     results = collection.query(
         query_embeddings=[question_embedding.tolist()],
-        n_results=1
+        n_results=3,
+        where={"user_id": user_id}
+        
     )
 
-    # Print results
-    
+    # print(results)
+    # print("Total vectors:", collection.count())
 
-    return results["documents"][0][0]
+    context = "\n".join(results["documents"][0])
 
+    return context
 

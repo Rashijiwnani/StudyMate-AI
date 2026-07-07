@@ -1,0 +1,180 @@
+body{
+
+    margin:0;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:#f5f7fb;
+
+}
+
+.navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 50px;
+
+    background:white;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+}
+
+.logout-btn{
+
+    background:#6366f1;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 20px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+.upload-box,.chat-box{
+
+    width:60%;
+
+    margin:40px auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+input{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-top:15px;
+
+    margin-bottom:15px;
+
+    border-radius:8px;
+
+    border:1px solid #ddd;
+
+}
+button {
+    background: #6366f1;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #4f46e5;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+body{
+    background:#f5f7fb;
+}
+
+.navbar{
+
+    height:70px;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 40px;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+}
+
+.logout-btn{
+
+    background:#6366f1;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+.logout-btn:hover{
+
+    background:#4f46e5;
+
+}
+.dashboard{
+    min-height:100vh;
+    background:#f5f7fb;
+}
+
+.dashboard-container{
+    width:80%;
+    max-width:900px;
+    margin:40px auto;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.card h2{
+    margin-bottom:20px;
+    color:#374151;
+}
+
+.action-buttons{
+    display:flex;
+    justify-content:center;
+    margin-bottom:25px;
+}
+
+.summary-btn{
+    background:#6366f1;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.summary-btn:hover{
+    background:#4f46e5;
+}

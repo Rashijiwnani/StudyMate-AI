@@ -1,5 +1,5 @@
 from models.user_db_model import Base
-from sqlalchemy import Column, Integer, String,DateTime
+from sqlalchemy import Column, Integer, String,DateTime,Text
 from datetime import datetime
 
 class PDF(Base):
@@ -12,4 +12,5 @@ class PDF(Base):
     file_name = Column(String(255))
 
     file_path = Column(String(500))
+    summary=Column(Text)
     upload_date = Column(DateTime, default=datetime.now)
